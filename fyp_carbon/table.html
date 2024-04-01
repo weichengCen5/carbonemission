@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <link href="layui/css/layui.css" rel="stylesheet" />
+  <style>
+    tbody tr td:last-child {
+      position: relative;
+    }
+
+    #td1:hover:after {
+      position: absolute;
+      left: -290px;
+      background-image: url("td1.jpg");
+      background-size: 100% 100%;
+      border-radius: 5px;
+      content: attr(labelTooltip);
+      width: 300px;
+      height: 300px;
+    }
+
+    #td2:hover:after {
+      position: absolute;
+      left: -290px;
+      background-image: url("td2.jpg");
+      background-size: 100% 100%;
+      border-radius: 5px;
+      content: attr(labelTooltip);
+      width: 300px;
+      height: 300px;
+    }
+    #td3:hover:after {
+      position: absolute;
+      left: -290px;
+      background-image: url("td3.jpg");
+      background-size: 100% 100%;
+      border-radius: 5px;
+      content: attr(labelTooltip);
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <div class="layui-anim" id="example-anim-element" style="padding: 16px 0">
+      <table class="layui-table" lay-even>
+        <thread>
+          <tr>
+            <th scope="row" colspan="2">Comparing with different vehicle</th>
+
+            <th>
+              <div align="right">
+                <button
+                  class="layui-btn layui-btn-primary"
+                  id="example-anim-usage"
+                >
+                  Show More
+                </button>
+              </div>
+            </th>
+          </tr>
+        </thread>
+        <tbody>
+          <tr>
+            <td>車輛碳排放</td>
+            <td>佔香港碳排放總量百分比(%)</td>
+            <td>千公噸二氧化碳當量</td>
+          </tr>
+
+          <tr>
+            <td>總計</td>
+            <td>10.10%</td>
+            <td>3999.6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="layui-anim"
+      id="example-anim-element2"
+      style="padding: 16px 0"
+      hidden="hidden"
+    >
+      <table class="layui-table" lay-even>
+        <thread>
+          <tr>
+            <th scope="row" colspan="2">Comparing with different vehicle</th>
+            <th>
+              <div align="right">
+                <button
+                  class="layui-btn layui-btn-primary"
+                  id="example-anim-usage2"
+                >
+                  Show More
+                </button>
+              </div>
+            </th>
+          </tr>
+        </thread>
+        <tbody>
+          <tr>
+            <td>車輛碳排放</td>
+            <td>佔香港碳排放總量百分比(%)</td>
+            <td>千公噸二氧化碳當量(Hover below data for details)</td>
+          </tr>
+          <tr>
+            <td>私家車</td>
+            <td>4.50%</td>
+            <td id="td1">1782</td>
+          </tr>
+          <tr>
+            <td>專營巴士</td>
+            <td>2%</td>
+            <td id="td2">792</td>
+          </tr>
+          <tr>
+            <td>的士</td>
+            <td>1.90%</td>
+            <td id="td2">752.4</td>
+          </tr>
+          <tr>
+            <td>非專營巴士</td>
+            <td>0.80%</td>
+            <td id="td2">316.8</td>
+          </tr>
+          <tr>
+            <td>公共小型巴士</td>
+            <td>0.60%</td>
+            <td id="td2">237.6</td>
+          </tr>
+          <tr>
+            <td>私家小型巴士</td>
+            <td>0.20%</td>
+            <td id="td2">79.2</td>
+          </tr>
+          <tr>
+            <td>電單車</td>
+            <td>0.10%</td>
+            <td id="td3">39.6</td>
+          </tr>
+          <tr>
+            <td>總計</td>
+            <td>10.10%</td>
+            <td>3999.6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <table class="layui-table" lay-even>
+      <thread>
+        <tr>
+          <th>單車泊位</th>
+          <th>單車騎行碳减排因數 （kgCO2e/PKM）</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thread>
+      <tbody>
+        <tr>
+          <td>60687</td>
+          <td>0.0487</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>單車使用率</td>
+          <td>共享單車數目</td>
+          <td>碳减排量(千公噸二氧化碳當量)</td>
+          <td>減碳率</td>
+        </tr>
+        <tr>
+          <td>(Actual)0.5%</td>
+          <td>5200</td>
+          <td>0.587496</td>
+          <td>0.494%</td>
+        </tr>
+        <tr>
+          <td>50.60%</td>
+          <td>53158</td>
+          <td>6.005779</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td>(If max)100%</td>
+          <td>105040</td>
+          <td>11.867419</td>
+          <td>99.7%</td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="//unpkg.com/layui@2.9.7/dist/layui.js"></script>
+    <script>
+      layui.use(function () {
+        var $ = layui.$;
+        var elem = $("#example-anim-element");
+        var elem2 = $("#example-anim-element2");
+        var animName = "layui-anim-down"; // 动画类名
+        // 通过事件简单演示动画过程
+        $("#example-anim-usage").on("click", function () {
+          document
+            .getElementById("example-anim-element2")
+            .removeAttribute("hidden");
+          document
+            .getElementById("example-anim-element")
+            .setAttribute("hidden", "hidden");
+          elem.removeClass(animName);
+          setTimeout(function () {
+            elem.addClass(animName);
+            // 给目标元素追加「往下滑入」的动画
+          });
+        });
+        $("#example-anim-usage2").on("click", function () {
+          document
+            .getElementById("example-anim-element")
+            .removeAttribute("hidden");
+          document
+            .getElementById("example-anim-element2")
+            .setAttribute("hidden", "hidden");
+          elem2.removeClass(animName);
+          setTimeout(function () {
+            elem2.addClass(animName);
+            // 给目标元素追加「往下滑入」的动画
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
