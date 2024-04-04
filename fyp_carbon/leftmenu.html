@@ -1,75 +1,30 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>ECharts</title>
+
+ 
+  <title></title>
 </head>
-<body style="background-color: rgba(255, 255, 255, 0.6)">
-  <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-  <div id="main" style="width: 80%; height: 400px; margin: 0 auto"></div>
-  <!-- ;margin-top:80px;控制距离顶部距离 -->
-  <!-- ECharts单文件引入 -->
-  <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-  <script type="text/javascript">
-    // 路径配置
-    require.config({
-      paths: {
-        echarts: "http://echarts.baidu.com/build/dist",
-      },
-    });
+<style>
+</style>
 
-    // 使用
-    require([
-      "echarts",
-      "echarts/chart/bar", // 使用柱状图就加载bar模块，按需加载
-      "echarts/chart/line",
-    ], function (ec) {
-      // 基于准备好的dom，初始化echarts图表
-      var myChart = ec.init(document.getElementById("main"));
+<body>
+  <div class="card chart-container">
+    <canvas id="chart"></canvas>
+  </div>
 
-      var option = {
-        //具体细节的描述
-        title: {
-          text: "香港碳排放",
-          textStyle: {
-            //主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
-            fontSize: 14,
-            fontStyle: "normal",
-            fontWeight: "bold",
-          },
-        },
-        tooltip: {
-          trigger: "axis",
-        },
-        legend: {
-          data: ["TOTAL", "In Transport"],
-        },
-        toolbox: {
-          //可以选择具体数据，柱状图，折线图，还原，保存图片的的切换选择
-          show: true,
-          feature: {
-            dataView: {
-              show: true,
-              readOnly: false,
-            },
-            magicType: {
-              show: true,
-              type: ["line", "bar"], //可选折线图和柱状图
-            },
-            restore: {
-              show: true, //恢复默认
-            },
-            saveAsImage: {
-              show: true, // 存储为图片的功能
-            },
-          },
-        },
-        calculable: true,
-        xAxis: [
-          {
-            type: "category",
-            //name: 'min_sup(%)'
-            data: [
-              "1990",
+</body>
+
+<script
+src="Chart.js">
+</script>
+<script>
+      const ctx = document.getElementById("chart").getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [  "1990",
               "1991",
               "1992",
               "1993",
@@ -101,46 +56,27 @@
               "2019",
               "2020",
               "2021",
-              "2022",
-            ],
-            name: "Year",
-            position: "left",
-          },
-        ],
-        yAxis: [
-          {
-            type: "value",
-            name: "碳排放(kilotonnesCO2‐e)",
-            position: "left",
-          },
-        ],
-        series: [
-          {
-            name: "TOTAL",
-            type: "line", // bar
-            data: [
-              35700, 39200, 43500, 43800, 36400, 37400, 35900, 34500, 36000,
+              "2022"],
+          datasets: [{
+            label: 'Last week',
+            backgroundColor: 'rgba(161, 198, 247, 1)',
+            borderColor: 'rgb(47, 128, 237)',
+            data: [35700, 39200, 43500, 43800, 36400, 37400, 35900, 34500, 36000,
               33500, 33200, 33200, 35100, 38700, 38800, 41300, 42300, 42800,
               41300, 42000, 40500, 42000, 42300, 43400, 44200, 40800, 41000,
-              40100, 40400, 39600, 33300, 34700, 33500,
-            ],
-            color: "#CC0066",
-          },
-          {
-            name: "In Transport",
-            type: "line", //bar
-            data: [
-              6160, 6720, 7110, 7210, 7520, 7430, 7410, 7540, 7670, 7710, 7270,
-              7090, 7530, 7610, 7600, 7490, 7650, 7470, 7170, 7100, 7070, 6880,
-              6820, 6810, 6850, 6960, 6960, 6910, 6990, 6790, 6280, 6520, 6420,
-            ],
-            color: "#009999",
-          },
-        ],
-      };
+              40100, 40400, 39600, 33300, 34700, 33500],
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+              }
+            }]
+          }
+        },
+      });
+</script>
 
-      // 为echarts对象加载数据
-      myChart.setOption(option);
-    });
-  </script>
-</body>
+</html>
