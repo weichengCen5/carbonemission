@@ -1,149 +1,218 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <title>Bootstrap Charts Template | PrepBootstrap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>香港共享單車减碳排放报告</title>
+    <link rel="icon" type="image/x-icon" href="icon.png" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="layui/css/layui.css" />
+  </head>
+  <body>
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header">
+        <div
+          class="layui-logo layui-hide-xs layui-bg-black"
+          style="
+            background-image: url('icon.png');
+            color: white;
+            font-weight: bold;
+            background-repeat: no-repeat;
+            background-size: 40% 80%;
+            background-position: center;
+          "
+        ></div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+          <!-- 移动端显示 -->
+          <li
+            class="layui-nav-item layui-show-xs-inline-block layui-hide-sm"
+            lay-header-event="menuLeft"
+          >
+            <i class="layui-icon layui-icon-spread-left"></i>
+          </li>
 
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+          <li class="layui-nav-item layui-this">
+            <a href="#real-time" onclick="myReal()">即時儀表板</a>
+          </li>
+          <li class="layui-nav-item layui-hide-xs">
+            <a href="#lifecycle" onclick="myLifecycle()">共享單車生命週期</a>
+          </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+          <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+            <a href="javascript:;">
+              <img
+                src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png"
+                class="layui-nav-img"
+              />
+              语言
+            </a>
+            <dl class="layui-nav-child">
+              <dd><a href="index.html">English</a></dd>
+              <dd><a href="index2.html">繁</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+      <div id="Lifecycle" style="display: none">
+        <br /><br /><br />
+        <iframe
+          src="lifecycle copy.html"
+          width="100%"
+          height="2698"
+          frameborder="0"
+        ></iframe>
+      </div>
 
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<div class="container">
-
-<div class="page-header">
-    <h1>Bootstrap Charts <small>Bootstrap template, demonstrating a set of JavaScript Charts</small></h1>
-</div>
-
-<!-- Bootstrap Charts - START -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3>Line Series</h3>
+      <div id="Real-time">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px">
+          <br /><br /><br />
+          <blockquote
+            class="layui-elem-quote layui-text"
+            style="
+              background-image: url('bg.jpg');
+              color: white;
+              font-weight: bold;
+              background-size: 100% 100%;
+            "
+          >
+            香港共享單車减碳排放报告
+          </blockquote>
+          <div class="layui-card layui-panel">
+            <div
+              style="
+                color: black;
+                border: 2px #ccc solid;
+                padding: 10px;
+                font-weight: bolder;
+                background-color: rgba(255, 255, 255, 0.548);
+              "
+            >
+              <small>[ 最後更新時間為 2024-03-26 ]</small>
+              <div class="layui-row">
+                <div class="layui-col-xs4">
+                  <fieldset
+                    class="layui-elem-field"
+                    style="border: 2px #16baaa solid; height: 100px"
+                  >
+                    <div style="text-align: center">
+                      <div class="layui-field-box">
+                        每月平均共享單車使用頻率
+                        <h2>243,141</h2>
+                      </div>
+                    </div>
+                  </fieldset>
                 </div>
-                <div class="panel-body">
-                    <div id="chart1"></div>
+                <div class="layui-col-xs4">
+                  <fieldset
+                    class="layui-elem-field"
+                    style="border: 2px #16baaa solid; height: 100px"
+                  >
+                    <div style="text-align: center">
+                      <div class="layui-field-box">
+                        單車使用率
+                        <h2>0.5%</h2>
+                      </div>
+                    </div>
+                  </fieldset>
                 </div>
+                <div class="layui-col-xs4">
+                  <fieldset
+                    class="layui-elem-field"
+                    style="border: 2px #16baaa solid; height: 100px"
+                  >
+                    <div class="layui-field-box">
+                      預計每月減碳量
+                      <div style="text-align: center">
+                        <h2>213.137 kTCO2e</h2>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <iframe
+                src="leftmenu copy.html"
+                width="100%"
+                height="420"
+                frameborder="0"
+              ></iframe
+              ><iframe
+                src="centermenu copy.html"
+                width="100%"
+                height="420"
+                frameborder="0"
+              ></iframe>
+              <iframe
+                src="yearly copy.html"
+                width="100%"
+                height="420"
+                frameborder="0"
+              ></iframe>
+              <iframe
+                src="table copy.html"
+                width="100%"
+                height="445"
+                frameborder="0"
+              ></iframe>
+              <iframe
+                src="timeline copy.html"
+                width="100%"
+                height="400"
+                frameborder="0"
+              ></iframe>
             </div>
+          </div>
+
+          <br /><br />
         </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3>Polar Series</h3>
-                </div>
-                <div id="chart2" class="panel-body">
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3>Area Series</h3>
-                </div>
-                <div class="panel-body">
-                    <div id="chart3"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3>StepLine Series</h3>
-                </div>
-                <div id="chart4" class="panel-body">
-                </div>
-            </div>
-        </div>
-    </div>   
-</div>
 
-<!-- you need to include the shieldui css and js assets in order for the charts to work -->
-<link rel="stylesheet" type="text/css" href="all.min.css" />
-<script type="text/javascript" src="shieldui-all.min.js"></script>
+    <script src="//cdn.staticfile.org/layui/2.9.7/layui.js"></script>
+    <script>
+      //JS
+      layui.use(["element", "layer", "util"], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var util = layui.util;
+        var $ = layui.$;
 
-<script type="text/javascript">
-    jQuery(function ($) {
-        var data1 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
-        var data2 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
-        var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
-        var data4 = [13, 19, 112, 114, 212, 332, 435, 132, 67, 45, 55, 7];
-            
-        $("#chart1").shieldChart({
-            exportOptions: {
-                image: false,
-                print: false
-            },
-            axisY: {
-                title: {
-                    text: "Break-Down for selected quarter"
-                }
-            },
-            dataSeries: [{
-                seriesType: "line",
-                data: data1
-            }]
+        //头部事件
+        util.event("lay-header-event", {
+          menuLeft: function () {
+            // 侧菜单事件
+            layer.open({
+              type: 1,
+              title: "Menu",
+              content:
+                '<div class="layui-panel"><ul class="layui-menu" id="demo-menu">' +
+                '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="javascript:;" onclick="myReal()">Real-time dashboard</a></div></li>' +
+                '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="javascript:;" onclick="myLifecycle()">Lifecycle of Share bicycle</a></div></li>' +
+                '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="index.html">English</a></div></li>' +
+                '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="index2.html">繁</a></div></li>' +
+                "</ul></div>",
+              area: ["260px", "100%"],
+              offset: "lt", // 右上角
+              anim: "slideRight", // 从右侧抽屉滑出
+              shadeClose: true,
+              scrollbar: false,
+            });
+          },
         });
+      });
 
-        $("#chart2").shieldChart({
-            exportOptions: {
-                image: false,
-                print: false
-            },
-            axisY: {
-                title: {
-                    text: "Break-Down for selected quarter"
-                }
-            },
-            dataSeries: [{
-                seriesType: "polarbar",
-                data: data2
-            }]
-        });
-
-        $("#chart3").shieldChart({
-            exportOptions: {
-                image: false,
-                print: false
-            },
-            axisY: {
-                title: {
-                    text: "Break-Down for selected quarter"
-                }
-            },
-            dataSeries: [{
-                seriesType: "area",
-                data: data3
-            }]
-        });
-
-        $("#chart4").shieldChart({
-            exportOptions: {
-                image: false,
-                print: false
-            },
-            axisY: {
-                title: {
-                    text: "Break-Down for selected quarter"
-                }
-            },
-            dataSeries: [{
-                seriesType: "stepline",
-                data: data4
-            }]
-        });
-    });
-</script>
-<!-- Bootstrap Charts - END -->
-
-</div>
-
-</body>
+      function myLifecycle() {
+        document.getElementById("Real-time").style.display = "none";
+        document.getElementById("Lifecycle").style.display = "block";
+      }
+      function myReal() {
+        document.getElementById("Real-time").style.display = "block";
+        document.getElementById("Lifecycle").style.display = "none";
+      }
+    </script>
+  </body>
 </html>
