@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="layui/css/layui.css" />
+    <style>
+      td {
+        text-align: center;
+      }
+      #td1 {
+        border-radius: 10%;
+        background-color: aquamarine;
+      }
+      #td2 {
+        border-radius: 10%;
+        background-color: rgba(127, 157, 255, 0.925);
+      }
+      #td3 {
+        border-radius: 10%;
+        background-color: rgba(255, 127, 144, 0.925);
+      }
+    </style>
+  </head>
+  <body>
+    <div style="padding: 15px">
+      <blockquote
+        class="layui-elem-quote layui-text"
+        style="
+          background-image: url('bg.jpg');
+          color: white;
+          font-weight: bold;
+          background-size: 100% 100%;
+        "
+      >
+        Lifecycle of Shared-bike in Hong Kong
+      </blockquote>
+
+      <table border="1" width="80%" rules="none" align="center" frame="void">
+        <tbody>
+          <tr>
+            <td>輸入</td>
+            <td></td>
+            <td>生命周期</td>
+            <td></td>
+            <td>輸出</td>
+          </tr>
+          <tr>
+            <td id="td1">
+              <a href="#div2">資源消耗(鉄,橡膠,塑膠,鋁等)<br />能源消耗(電)</a>
+            </td>
+            <td><img src="arrow.jpg" width="30" height="30" /></td>
+            <td id="td2">
+              <a href="#div2"
+                >零部件生產(框架,籃,車胎,車輪,鏈,脚蹬,車閘,其他部件)<br />整車組裝,包裝與運輸流通</a
+              >
+            </td>
+            <td><img src="arrow.jpg" width="30" height="30" /></td>
+            <td id="td3">
+              <a href="#div2">溫室氣體排放<br />污染物產生</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5"><img src="xarrow.jpg" width="30" height="30" /></td>
+          </tr>
+          <tr>
+            <td id="td1">
+              <a href="#div3">綫路距離<br />出行時間<br />替代出行方式</a>
+            </td>
+            <td><img src="arrow.jpg" width="30" height="30" /></td>
+            <td id="td2">
+              <a href="#div3">使用環節(替代巴士,私家車,地鐵,步行)</a>
+            </td>
+            <td><img src="arrow.jpg" width="30" height="30" /></td>
+            <td id="td3"><a href="#div3">替代傳統出行產生的碳減排量</a></td>
+          </tr>
+          <tr>
+            <td colspan="5"><img src="xarrow.jpg" width="30" height="30" /></td>
+          </tr>
+          <tr>
+            <td id="td1"><a href="#div4">能源消耗(電)</a></td>
+            <td><img src="arrow.jpg" width="30" height="30" /></td>
+            <td id="td2"><a href="#div4">廢棄(回收,再生利用,處置)</a></td>
+            <td><img src="arrow.jpg" width="30" height="30" /></td>
+            <td id="td3">
+              <a href="#div4">再生材料<br />資源回收量</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="layui-table" id="div1" lay-even>
+        <thread>
+          <tr>
+            <th scope="row" colspan="3">全生命週期碳足跡</th>
+          </tr>
+        </thread>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>種類</td>
+            <td>碳排放因子(kgCO2e)</td>
+          </tr>
+
+          <tr>
+            <td scope="row" rowspan="2">生產階段</td>
+            <td>原材料碳排放</td>
+            <td>101.53</td>
+          </tr>
+
+          <tr>
+            <td>生產碳排放</td>
+            <td>2.17</td>
+          </tr>
+          <tr>
+            <td scope="row" rowspan="2">使用階段</td>
+            <td>調度碳排放</td>
+            <td>5.84</td>
+          </tr>
+
+          <tr>
+            <td>伺服器碳排放</td>
+            <td>3.44</td>
+          </tr>
+          <tr>
+            <td scope="row" colspan="2">全生命週期碳足跡</td>
+            <td>112.98</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <iframe
+      src="firsttable copy.html"
+      width="100%"
+      height="1168px"
+      frameborder="0"
+      id="div2"
+    ></iframe>
+    <iframe
+      src="table copy.html"
+      width="100%"
+      height="445"
+      frameborder="0"
+      id="div3"
+    ></iframe>
+    <iframe
+      src="secondtable copy.html"
+      width="100%"
+      height="325px"
+      frameborder="0"
+      id="div4"
+    ></iframe>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#div1Link").click(function () {
+        $("html, body").animate(
+          {
+            scrollTop: $("#div1").offset().top,
+          },
+          { duration: 500, easing: "swing" }
+        );
+        return false;
+      });
+      $("#div2Link").click(function () {
+        $("html, body").animate(
+          {
+            scrollTop: $("#div2").offset().top,
+          },
+          { duration: 500, easing: "swing" }
+        );
+        return false;
+      });
+      $("#div3Link").click(function () {
+        $("html, body").animate(
+          {
+            scrollTop: $("#div3").offset().top,
+          },
+          { duration: 500, easing: "swing" }
+        );
+        return false;
+      });
+    });
+  </script>
+</html>

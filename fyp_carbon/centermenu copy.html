@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+  </head>
+  <style></style>
+
+  <body>
+    <div class="card chart-container">
+      <canvas id="chart"></canvas>
+    </div>
+  </body>
+
+  <script src="Chart.js"></script>
+  <script>
+    const ctx = document.getElementById("chart").getContext("2d");
+    const myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: [
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+        ],
+        datasets: [
+          {
+            label: "共享單車用戶數",
+            backgroundColor: "rgba(161, 198, 247, 1)",
+            borderColor: "rgb(47, 128, 237)",
+            data: [
+              257000, 292000, 325000, 328000, 334000, 334000, 339000, 345000,
+              360000,
+            ],
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+  </script>
+</html>
