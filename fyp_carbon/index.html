@@ -42,6 +42,21 @@
             >
           </li>
         </ul>
+        <ul class="layui-nav layui-layout-right">
+          <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+            <a href="javascript:;">
+              <img
+                src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png"
+                class="layui-nav-img"
+              />
+              language
+            </a>
+            <dl class="layui-nav-child">
+              <dd><a href="index.html">English</a></dd>
+              <dd><a href="index2.html">繁</a></dd>
+            </dl>
+          </li>
+        </ul>
       </div>
       <div id="Lifecycle" style="display: none">
         <br /><br /><br />
@@ -179,6 +194,8 @@
                 '<div class="layui-panel"><ul class="layui-menu" id="demo-menu">' +
                 '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="javascript:;" onclick="myReal()">Real-time dashboard</a></div></li>' +
                 '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="javascript:;" onclick="myLifecycle()">Lifecycle of Share bicycle</a></div></li>' +
+                '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="index.html">English</a></div></li>' +
+                '<li lay-options="{id: 100}"><div class="layui-menu-body-title"><a href="index2.html">繁</a></div></li>' +
                 "</ul></div>",
               area: ["260px", "100%"],
               offset: "lt", // 右上角
